@@ -7,13 +7,13 @@
   IgnorableNamespaces="uap rescap">
 
   <Identity
-    Name="c21f75a1-7abc-4b93-a2b6-b66c74ab7ebe"
-    Publisher="CN=i.shabatat"
+    Name="23120IHAB.ScheduleProspector"
+    Publisher="CN=946BA888-29D7-422A-BEF5-44FCD5DD4737"
     Version="1.0.0.0" />
 
   <Properties>
-    <DisplayName>MSStorePackaging</DisplayName>
-    <PublisherDisplayName>i.shabatat</PublisherDisplayName>
+    <DisplayName>Schedule Prospector</DisplayName>
+    <PublisherDisplayName>IHAB</PublisherDisplayName>
     <Logo>Images\StoreLogo.png</Logo>
   </Properties>
 
@@ -31,7 +31,7 @@
       Executable="$targetnametoken$.exe"
       EntryPoint="$targetentrypoint$">
       <uap:VisualElements
-        DisplayName="MSStorePackaging"
+        DisplayName="Schedule Prospector"
         Description="MSStorePackaging"
         BackgroundColor="transparent"
         Square150x150Logo="Images\Square150x150Logo.png"
