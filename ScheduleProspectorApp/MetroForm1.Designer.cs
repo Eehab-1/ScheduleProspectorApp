@@ -42,12 +42,16 @@ namespace ScheduleProspectorApp
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.sfButton1 = new Syncfusion.WinForms.Controls.SfButton();
             this.tabPageAdv4 = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
+            this.label3 = new System.Windows.Forms.Label();
             this.sfButton2 = new Syncfusion.WinForms.Controls.SfButton();
             this.tabPageAdv3 = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
-            this.tabPageAdv5 = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
             this.label1 = new System.Windows.Forms.Label();
+            this.tabPageAdv5 = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.tabPageAdv6 = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
+            this.sfButton4 = new Syncfusion.WinForms.Controls.SfButton();
+            this.sfButton3 = new Syncfusion.WinForms.Controls.SfButton();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tabControlAdv1)).BeginInit();
             this.tabControlAdv1.SuspendLayout();
             this.tabPageAdv1.SuspendLayout();
@@ -56,22 +60,24 @@ namespace ScheduleProspectorApp
             this.tabPageAdv4.SuspendLayout();
             this.tabPageAdv3.SuspendLayout();
             this.tabPageAdv5.SuspendLayout();
+            this.tabPageAdv6.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlAdv1
             // 
             this.tabControlAdv1.ActiveTabFont = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
-            this.tabControlAdv1.BeforeTouchSize = new System.Drawing.Size(740, 527);
+            this.tabControlAdv1.BeforeTouchSize = new System.Drawing.Size(788, 663);
             this.tabControlAdv1.Controls.Add(this.tabPageAdv1);
             this.tabControlAdv1.Controls.Add(this.tabPageAdv2);
             this.tabControlAdv1.Controls.Add(this.tabPageAdv4);
             this.tabControlAdv1.Controls.Add(this.tabPageAdv3);
             this.tabControlAdv1.Controls.Add(this.tabPageAdv5);
+            this.tabControlAdv1.Controls.Add(this.tabPageAdv6);
             this.tabControlAdv1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControlAdv1.FocusOnTabClick = false;
             this.tabControlAdv1.Location = new System.Drawing.Point(2, 2);
             this.tabControlAdv1.Name = "tabControlAdv1";
-            this.tabControlAdv1.Size = new System.Drawing.Size(740, 527);
+            this.tabControlAdv1.Size = new System.Drawing.Size(788, 663);
             this.tabControlAdv1.TabIndex = 0;
             this.tabControlAdv1.TabStop = false;
             this.tabControlAdv1.TabStyle = typeof(Syncfusion.Windows.Forms.Tools.OneNoteStyleRenderer);
@@ -96,7 +102,7 @@ namespace ScheduleProspectorApp
             this.tabPageAdv1.Location = new System.Drawing.Point(3, 42);
             this.tabPageAdv1.Name = "tabPageAdv1";
             this.tabPageAdv1.ShowCloseButton = true;
-            this.tabPageAdv1.Size = new System.Drawing.Size(733, 481);
+            this.tabPageAdv1.Size = new System.Drawing.Size(781, 617);
             this.tabPageAdv1.TabIndex = 1;
             this.tabPageAdv1.Text = "Files";
             this.tabPageAdv1.ThemesEnabled = false;
@@ -129,7 +135,6 @@ namespace ScheduleProspectorApp
             this.ExportBtn.Name = "ExportBtn";
             this.ExportBtn.Size = new System.Drawing.Size(111, 19);
             this.ExportBtn.Style.ForeColor = System.Drawing.Color.SteelBlue;
-            // this.ExportBtn.Style.Image = global::ScheduleProspectorApp.Properties.Resources.icons8_save_as_32;
             this.ExportBtn.Style.Image = global::ScheduleProspectorApp.Properties.Resources.icons8_save_as_32;
             this.ExportBtn.TabIndex = 5;
             this.ExportBtn.Text = "Choose output folder";
@@ -162,10 +167,11 @@ namespace ScheduleProspectorApp
             this.tabPageAdv2.Location = new System.Drawing.Point(3, 42);
             this.tabPageAdv2.Name = "tabPageAdv2";
             this.tabPageAdv2.ShowCloseButton = true;
-            this.tabPageAdv2.Size = new System.Drawing.Size(733, 481);
+            this.tabPageAdv2.Size = new System.Drawing.Size(781, 617);
             this.tabPageAdv2.TabIndex = 2;
             this.tabPageAdv2.Text = "Assessment";
             this.tabPageAdv2.ThemesEnabled = false;
+            this.tabPageAdv2.Click += new System.EventHandler(this.tabPageAdv2_Click);
             // 
             // groupBox1
             // 
@@ -226,10 +232,20 @@ namespace ScheduleProspectorApp
             this.tabPageAdv4.Location = new System.Drawing.Point(3, 42);
             this.tabPageAdv4.Name = "tabPageAdv4";
             this.tabPageAdv4.ShowCloseButton = true;
-            this.tabPageAdv4.Size = new System.Drawing.Size(733, 481);
+            this.tabPageAdv4.Size = new System.Drawing.Size(781, 617);
             this.tabPageAdv4.TabIndex = 4;
             this.tabPageAdv4.Text = "Extracting";
             this.tabPageAdv4.ThemesEnabled = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(21, 116);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(243, 36);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Coming Soon ...";
             // 
             // sfButton2
             // 
@@ -256,24 +272,10 @@ namespace ScheduleProspectorApp
             this.tabPageAdv3.Location = new System.Drawing.Point(3, 42);
             this.tabPageAdv3.Name = "tabPageAdv3";
             this.tabPageAdv3.ShowCloseButton = true;
-            this.tabPageAdv3.Size = new System.Drawing.Size(733, 481);
+            this.tabPageAdv3.Size = new System.Drawing.Size(781, 617);
             this.tabPageAdv3.TabIndex = 3;
             this.tabPageAdv3.Text = "Reporting";
             this.tabPageAdv3.ThemesEnabled = false;
-            // 
-            // tabPageAdv5
-            // 
-            this.tabPageAdv5.BackColor = System.Drawing.Color.SkyBlue;
-            this.tabPageAdv5.Controls.Add(this.label2);
-            this.tabPageAdv5.Image = global::ScheduleProspectorApp.Properties.Resources.financial_growth_analysis_64px;
-            this.tabPageAdv5.ImageSize = new System.Drawing.Size(24, 24);
-            this.tabPageAdv5.Location = new System.Drawing.Point(3, 42);
-            this.tabPageAdv5.Name = "tabPageAdv5";
-            this.tabPageAdv5.ShowCloseButton = true;
-            this.tabPageAdv5.Size = new System.Drawing.Size(733, 481);
-            this.tabPageAdv5.TabIndex = 5;
-            this.tabPageAdv5.Text = "Delay Analysis";
-            this.tabPageAdv5.ThemesEnabled = false;
             // 
             // label1
             // 
@@ -285,6 +287,20 @@ namespace ScheduleProspectorApp
             this.label1.TabIndex = 7;
             this.label1.Text = "Coming Soon ...";
             // 
+            // tabPageAdv5
+            // 
+            this.tabPageAdv5.BackColor = System.Drawing.Color.SkyBlue;
+            this.tabPageAdv5.Controls.Add(this.label2);
+            this.tabPageAdv5.Image = global::ScheduleProspectorApp.Properties.Resources.financial_growth_analysis_64px;
+            this.tabPageAdv5.ImageSize = new System.Drawing.Size(24, 24);
+            this.tabPageAdv5.Location = new System.Drawing.Point(3, 42);
+            this.tabPageAdv5.Name = "tabPageAdv5";
+            this.tabPageAdv5.ShowCloseButton = true;
+            this.tabPageAdv5.Size = new System.Drawing.Size(781, 617);
+            this.tabPageAdv5.TabIndex = 5;
+            this.tabPageAdv5.Text = "Delay Analysis";
+            this.tabPageAdv5.ThemesEnabled = false;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -295,21 +311,67 @@ namespace ScheduleProspectorApp
             this.label2.TabIndex = 8;
             this.label2.Text = "Coming Soon ...";
             // 
-            // label3
+            // tabPageAdv6
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(21, 116);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(243, 36);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Coming Soon ...";
+            this.tabPageAdv6.BackColor = System.Drawing.Color.SkyBlue;
+            this.tabPageAdv6.Controls.Add(this.label4);
+            this.tabPageAdv6.Controls.Add(this.sfButton4);
+            this.tabPageAdv6.Controls.Add(this.sfButton3);
+            this.tabPageAdv6.Image = global::ScheduleProspectorApp.Properties.Resources.more_info_50px;
+            this.tabPageAdv6.ImageSize = new System.Drawing.Size(24, 24);
+            this.tabPageAdv6.Location = new System.Drawing.Point(3, 42);
+            this.tabPageAdv6.Name = "tabPageAdv6";
+            this.tabPageAdv6.ShowCloseButton = true;
+            this.tabPageAdv6.Size = new System.Drawing.Size(781, 617);
+            this.tabPageAdv6.TabIndex = 6;
+            this.tabPageAdv6.Text = "Help";
+            this.tabPageAdv6.ThemesEnabled = false;
+            // 
+            // sfButton4
+            // 
+            this.sfButton4.AccessibleName = "Button";
+            this.sfButton4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.sfButton4.ForeColor = System.Drawing.Color.SteelBlue;
+            this.sfButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.sfButton4.Location = new System.Drawing.Point(50, 154);
+            this.sfButton4.Name = "sfButton4";
+            this.sfButton4.Size = new System.Drawing.Size(113, 19);
+            this.sfButton4.Style.ForeColor = System.Drawing.Color.SteelBlue;
+            this.sfButton4.Style.Image = global::ScheduleProspectorApp.Properties.Resources.update_64px;
+            this.sfButton4.TabIndex = 7;
+            this.sfButton4.Text = "Check available updates";
+            this.sfButton4.Click += new System.EventHandler(this.sfButton4_Click);
+            // 
+            // sfButton3
+            // 
+            this.sfButton3.AccessibleName = "Button";
+            this.sfButton3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.sfButton3.ForeColor = System.Drawing.Color.SteelBlue;
+            this.sfButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.sfButton3.Location = new System.Drawing.Point(50, 88);
+            this.sfButton3.Name = "sfButton3";
+            this.sfButton3.Size = new System.Drawing.Size(113, 19);
+            this.sfButton3.Style.ForeColor = System.Drawing.Color.SteelBlue;
+            this.sfButton3.Style.Image = global::ScheduleProspectorApp.Properties.Resources.website_40px;
+            this.sfButton3.TabIndex = 6;
+            this.sfButton3.Text = "visit official website";
+            this.sfButton3.Click += new System.EventHandler(this.sfButton3_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(19, 39);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(744, 20);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Please note this is a FREE tool and is still in the beta phase, and more features" +
+    " are coming.";
             // 
             // MetroForm1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(744, 531);
+            this.ClientSize = new System.Drawing.Size(792, 667);
             this.Controls.Add(this.tabControlAdv1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
@@ -320,6 +382,7 @@ namespace ScheduleProspectorApp
             this.Style.MdiChild.IconHorizontalAlignment = System.Windows.Forms.HorizontalAlignment.Center;
             this.Style.MdiChild.IconVerticalAlignment = System.Windows.Forms.VisualStyles.VerticalAlignment.Center;
             this.Text = "Schedule Prospector - Beta";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MetroForm1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tabControlAdv1)).EndInit();
             this.tabControlAdv1.ResumeLayout(false);
@@ -334,6 +397,8 @@ namespace ScheduleProspectorApp
             this.tabPageAdv3.PerformLayout();
             this.tabPageAdv5.ResumeLayout(false);
             this.tabPageAdv5.PerformLayout();
+            this.tabPageAdv6.ResumeLayout(false);
+            this.tabPageAdv6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -358,5 +423,9 @@ namespace ScheduleProspectorApp
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private Syncfusion.Windows.Forms.Tools.TabPageAdv tabPageAdv6;
+        private Syncfusion.WinForms.Controls.SfButton sfButton3;
+        private Syncfusion.WinForms.Controls.SfButton sfButton4;
+        private System.Windows.Forms.Label label4;
     }
 }

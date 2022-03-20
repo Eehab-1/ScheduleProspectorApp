@@ -393,6 +393,16 @@ namespace ScheduleProspectorApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap more_info_50px {
+            get {
+                object obj = ResourceManager.GetObject("more_info_50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap rating_40px {
             get {
                 object obj = ResourceManager.GetObject("rating_40px", resourceCulture);
@@ -433,6 +443,16 @@ namespace ScheduleProspectorApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap tie_40px {
+            get {
+                object obj = ResourceManager.GetObject("tie_40px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap tweezers_40px {
             get {
                 object obj = ResourceManager.GetObject("tweezers_40px", resourceCulture);
@@ -446,6 +466,26 @@ namespace ScheduleProspectorApp.Properties {
         internal static System.Drawing.Bitmap tweezers_40px1 {
             get {
                 object obj = ResourceManager.GetObject("tweezers_40px1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap update_64px {
+            get {
+                object obj = ResourceManager.GetObject("update_64px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap website_40px {
+            get {
+                object obj = ResourceManager.GetObject("website_40px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace ScheduleProspectorApp
 {
@@ -21,16 +22,16 @@ namespace ScheduleProspectorApp
             InitializeComponent();
 
             this.Style.TitleBar.Height = 50;
-            this.Style.TitleBar.BackColor = Color.White;
+            this.Style.TitleBar.BackColor = Color.Blue;
             this.Style.TitleBar.ForeColor = Color.White;
             this.Style.TitleBar.IconBackColor = Color.FromArgb(15, 161, 212);
-            this.BackColor = Color.White;
+            this.BackColor = Color.SkyBlue;
             //this.Style.TitleBar.ForeColor = ColorTranslator.FromHtml("#343434");
             this.Style.TitleBar.BackColor = Color.FromArgb(15, 161, 212);
 
-            this.Style.TitleBar.CloseButtonForeColor = Color.DarkGray;
-            this.Style.TitleBar.MaximizeButtonForeColor = Color.DarkGray;
-            this.Style.TitleBar.MinimizeButtonForeColor = Color.DarkGray;
+            this.Style.TitleBar.CloseButtonForeColor = Color.White;
+            this.Style.TitleBar.MaximizeButtonForeColor = Color.White;
+            this.Style.TitleBar.MinimizeButtonForeColor = Color.White;
             this.Style.TitleBar.HelpButtonForeColor = Color.DarkGray;
             this.Style.TitleBar.IconHorizontalAlignment = HorizontalAlignment.Left;
             this.Style.TitleBar.Font = this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -97,7 +98,7 @@ namespace ScheduleProspectorApp
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(Backuplabel.Text))
+            if (Backuplabel.Text== "No output chosen")
             {
                 MessageBox.Show(" You MUST choose Backup folder !", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -160,13 +161,42 @@ namespace ScheduleProspectorApp
 
 
 
+            await Task.Delay(500);
+
+            await Task.Run(() =>
+            {
+                try
+                {
+                    Process.Start(Backuplabel.Text);
+                }
+
+                catch { }
+
+            });
 
 
 
         }
 
-        private void sfButton2_Click(object sender, EventArgs e)
+        private async void sfButton2_Click(object sender, EventArgs e)
         {
+
+
+            if (string.IsNullOrWhiteSpace(filecontent))
+            {
+                MessageBox.Show(" You MUST import a file  !", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (Backuplabel.Text == "No output chosen")
+            {
+                MessageBox.Show(" You MUST choose Backup folder !", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
+
+
 
             string XerFileContent = filecontent;
 
@@ -178,95 +208,147 @@ namespace ScheduleProspectorApp
 
             XerFunctions xerfunc = new XerFunctions();
 
-            DataTable TaskDataTable = xerextractor.TASKTable(XerFileContent, xerextractor, xerfunc);
 
-            DataTable CalendarDataTable = xerextractor.CalendarTable(XerFileContent, xerextractor, xerfunc);
-
-            var TASKPREDDataTable = xerextractor.TASKPREDTable(XerFileContent, xerextractor, xerfunc);
-
-
-            string ProjectName = xerextractor.ProjectName(XerFileContent, xerextractor, xerfunc);
-
-
-            var TaskDataTableList = (from t in TaskDataTable.AsEnumerable()
-
-                                     select new
-                                     {
-                                         task_id = t.Field<string>("task_id"),
-                                         task_code = t.Field<string>("task_code"),
-                                         task_name = t.Field<string>("task_name")
-
-                                     }).ToList().OrderBy(a => a.task_code);
-
-
-
-
-            foreach (DataRow row in TASKPREDDataTable.Rows)
+            await Task.Run(() =>
             {
-                if (row["task_id"].ToString() != "task_id")
+
+
+                try
                 {
 
-                    string task_code = TaskDataTableList.Where(a => a.task_id == row["task_id"].ToString())
-                        .Select(a => a.task_code).FirstOrDefault();
 
-                    row["task_id"] = task_code;
+
+
+                    DataTable TaskDataTable = xerextractor.TASKTable(XerFileContent, xerextractor, xerfunc);
+
+                    DataTable CalendarDataTable = xerextractor.CalendarTable(XerFileContent, xerextractor, xerfunc);
+
+                    var TASKPREDDataTable = xerextractor.TASKPREDTable(XerFileContent, xerextractor, xerfunc);
+
+
+                    string ProjectName = xerextractor.ProjectName(XerFileContent, xerextractor, xerfunc);
+
+
+                    var TaskDataTableList = (from t in TaskDataTable.AsEnumerable()
+
+                                             select new
+                                             {
+                                                 task_id = t.Field<string>("task_id"),
+                                                 task_code = t.Field<string>("task_code"),
+                                                 task_name = t.Field<string>("task_name")
+
+                                             }).ToList().OrderBy(a => a.task_code);
+
+
+
+
+                    foreach (DataRow row in TASKPREDDataTable.Rows)
+                    {
+                        if (row["task_id"].ToString() != "task_id")
+                        {
+
+                            string task_code = TaskDataTableList.Where(a => a.task_id == row["task_id"].ToString())
+                                .Select(a => a.task_code).FirstOrDefault();
+
+                            row["task_id"] = task_code;
+                        }
+
+                        if (row["pred_task_id"].ToString() != "task_id")
+                        {
+
+                            string task_code = TaskDataTableList.Where(a => a.task_id == row["pred_task_id"].ToString())
+                                .Select(a => a.task_code).FirstOrDefault();
+
+                            row["pred_task_id"] = task_code;
+                        }
+
+
+
+                    }
+
+
+
+
+
+
+
+
+                    string datetimenow = DateTime.Now.ToString("yyyy-dd-M--HH-mm-ss");
+
+                    string folderName = Backuplabel.Text;
+
+                    string pathString = System.IO.Path.Combine(folderName, ProjectName + " Extracted "+ "  " + datetimenow);
+                    System.IO.Directory.CreateDirectory(pathString);
+
+                    string excelfilepath = pathString + @"\" + "Extracted_Data.xlsx";
+
+
+                    using (ExcelPackage pck = new ExcelPackage(excelfilepath))
+                    {
+                        ExcelWorksheet ws = pck.Workbook.Worksheets.Add("Activites");
+                        ws.Cells["A1"].LoadFromDataTable(TaskDataTable, true);
+
+                        ExcelWorksheet ws2 = pck.Workbook.Worksheets.Add("Relationships");
+                        ws2.Cells["A1"].LoadFromDataTable(TASKPREDDataTable, true);
+
+                        ExcelWorksheet ws3 = pck.Workbook.Worksheets.Add("Calendars");
+                        ws3.Cells["A1"].LoadFromDataTable(CalendarDataTable, true);
+
+
+
+                        pck.Save();
+                    }
+
+
+                    
+
                 }
 
-                if (row["pred_task_id"].ToString() != "task_id")
-                {
 
-                    string task_code = TaskDataTableList.Where(a => a.task_id == row["pred_task_id"].ToString())
-                        .Select(a => a.task_code).FirstOrDefault();
-
-                    row["pred_task_id"] = task_code;
-                }
+                catch { }
 
 
+            });
 
-            }
+            await Task.Delay(500);
 
-
-
-
-
-
-
-
-            string datetimenow = DateTime.Now.ToString("yyyy-dd-M--HH-mm-ss");
-
-            string folderName = Backuplabel.Text;
-
-            string pathString = System.IO.Path.Combine(folderName, ProjectName + "  " + datetimenow);
-            System.IO.Directory.CreateDirectory(pathString);
-
-            string excelfilepath = pathString + @"\" + "Extracted_Data.xlsx";
-
-
-            using (ExcelPackage pck = new ExcelPackage(excelfilepath))
+            await Task.Run(() =>
             {
-                ExcelWorksheet ws = pck.Workbook.Worksheets.Add("Activites");
-                ws.Cells["A1"].LoadFromDataTable(TaskDataTable, true);
-
-                ExcelWorksheet ws2 = pck.Workbook.Worksheets.Add("Relationships");
-                ws2.Cells["A1"].LoadFromDataTable(TASKPREDDataTable, true);
-
-                ExcelWorksheet ws3 = pck.Workbook.Worksheets.Add("Calendars");
-                ws3.Cells["A1"].LoadFromDataTable(CalendarDataTable, true);
-
-
-
-                pck.Save();
-            }
-
-
-
-
-
+                try
+                {
+                    Process.Start(Backuplabel.Text);
+                }
+               
+                catch { } 
+                
+            });
 
 
         }
 
+        private async  void sfButton3_Click(object sender, EventArgs e)
+        {
+            await Task.Run(() =>
+            {
+                Process.Start("http://scheduleprospector.com");
+            });
+           
+        }
+
+        private async void sfButton4_Click(object sender, EventArgs e)
+        {
+            await Task.Run(() =>
+            {
+                Process.Start("ms-windows-store:updates");
+            });
+           
 
 
+        }
+
+        private void tabPageAdv2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

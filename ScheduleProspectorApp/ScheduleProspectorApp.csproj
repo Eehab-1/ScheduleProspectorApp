@@ -179,5 +179,17 @@
   <ItemGroup>
     <None Include="Resources\delete_48px.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\more_info_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tie_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\website_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\update_64px.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
