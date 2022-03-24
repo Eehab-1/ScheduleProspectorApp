@@ -200,7 +200,7 @@ namespace ScheduleProspectorApp
 
             string XerFileContent = filecontent;
 
-            //  string XerFileContent = string.Join("", GlobalXMLList);
+          
 
             XerExtractor xerextractor = new XerExtractor();
 
