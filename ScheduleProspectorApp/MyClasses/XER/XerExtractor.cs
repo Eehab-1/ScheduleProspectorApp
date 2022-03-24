@@ -108,7 +108,7 @@ namespace ScheduleProspectorApp.MyClasses.XER
 
                 plan_start_date_Index_List.Add(plan_start_date_index);
 
-                // richTextBox6.AppendText(last_recalc_date_Index_List[0].ToString() +Environment.NewLine);
+               
 
                 for (int i = 0; i < segments.Length; i++)
                 {
@@ -118,7 +118,7 @@ namespace ScheduleProspectorApp.MyClasses.XER
 
                     if (i == last_recalc_date_Index_List[0])
                     {
-                        //   richTextBox2.AppendText(segments[i] + Environment.NewLine);
+                        
                         if (!string.IsNullOrWhiteSpace(segments[i]))
                         {
                             last_recalc_date_list.Add(segments[i]);
@@ -721,8 +721,7 @@ namespace ScheduleProspectorApp.MyClasses.XER
         public string ProjectName(string XerFileContent, XerExtractor xerextractor, XerFunctions xerfunctions)
         {
 
-            //wbs_name
-            //PROJWBS
+            
 
 
 
@@ -904,7 +903,7 @@ namespace ScheduleProspectorApp.MyClasses.XER
             clndr_name_List.RemoveAt(0);
             day_hr_cnt_List.RemoveAt(0);
             default_flag_List.RemoveAt(0);
-            //  clndr_data_List.RemoveAt(0);
+          
 
             DataTable datatable = new DataTable();
 
@@ -912,7 +911,7 @@ namespace ScheduleProspectorApp.MyClasses.XER
             datatable.Columns.Add("clndr_name", typeof(string));
             datatable.Columns.Add("day_hr_cnt", typeof(string));
             datatable.Columns.Add("default_flag", typeof(string));
-            // datatable.Columns.Add("clndr_data", typeof(string));
+           
 
 
 

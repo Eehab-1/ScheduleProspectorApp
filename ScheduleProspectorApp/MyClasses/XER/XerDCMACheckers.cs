@@ -17,7 +17,7 @@ namespace ScheduleProspectorApp.MyClasses.XER
 
         //1. Logic
 
-        // something wrong with alrahbah sample file check it again later
+      
 
         public (List<(string, string)> NonLogicActs, string LogicPercent, bool IsPassed)
        MissingLogicCheck(DataTable TaskDataTable, DataTable RelationsDataTable)
@@ -151,10 +151,7 @@ namespace ScheduleProspectorApp.MyClasses.XER
 
             var NegativeLagList = NonCompletedTasksRelationList.ToList().Distinct().Where(a => a.Lag < 0);
 
-            foreach (var item in NegativeLagList)
-            {
-                //  richTextBox6.AppendText(item + Environment.NewLine);
-            }
+         
 
 
 
@@ -1355,8 +1352,7 @@ namespace ScheduleProspectorApp.MyClasses.XER
 
             var MissedLogicList = xerdcma.MissingLogicCheck(TaskDataTable, TASKPREDDataTable).NonLogicActs;
 
-            // richTextBox6.AppendText(MissingLogicCheckPercent + Environment.NewLine);
-            //richTextBox6.AppendText(MissingLogicCheckbool.ToString() + Environment.NewLine);
+           
 
             PercentDic.Add("Logic", MissingLogicCheckPercent);
             IsPassedDic.Add("Logic", MissingLogicCheckbool);
@@ -1368,8 +1364,7 @@ namespace ScheduleProspectorApp.MyClasses.XER
 
             var LeadsActs = xerdcma.LeadsCheck(TaskDataTable, TASKPREDDataTable, CalendarDataTable).PreActivitesWithLead;
 
-            //  richTextBox6.AppendText(LeadsCheckPercent + Environment.NewLine);
-            //richTextBox6.AppendText(LeadsCheckbool.ToString() + Environment.NewLine);
+          
 
             PercentDic.Add("Lead", LeadsCheckPercent);
             IsPassedDic.Add("Lead", LeadsCheckbool);
@@ -1383,8 +1378,6 @@ namespace ScheduleProspectorApp.MyClasses.XER
             var LagActs = xerdcma.LagCheck(TaskDataTable, TASKPREDDataTable, CalendarDataTable).PreActivitesWithLag;
 
 
-            //richTextBox6.AppendText(LagCheckPercent + Environment.NewLine);
-            //richTextBox6.AppendText(LagCheckbool.ToString() + Environment.NewLine);
 
             PercentDic.Add("Lag", LagCheckPercent);
             IsPassedDic.Add("Lag", LagCheckbool);
@@ -1396,8 +1389,7 @@ namespace ScheduleProspectorApp.MyClasses.XER
 
             var NonFSActs = xerdcma.FSRelationshipCheck(TaskDataTable, TASKPREDDataTable).NonFSActivites;
 
-            //richTextBox6.AppendText(FSRelationshipCheckPercent + Environment.NewLine);
-            //richTextBox6.AppendText(FSRelationshipCheckbool.ToString() + Environment.NewLine);
+          
 
             PercentDic.Add("FSRelations", FSRelationshipCheckPercent);
             IsPassedDic.Add("FSRelations", FSRelationshipCheckbool);
@@ -1410,8 +1402,7 @@ namespace ScheduleProspectorApp.MyClasses.XER
 
             var HardConsActs = xerdcma.HardConsCheck(TaskDataTable).HardConsActs;
 
-            //richTextBox6.AppendText(HardConsCheckPercent + Environment.NewLine);
-            //richTextBox6.AppendText(HardConsCheckbool.ToString() + Environment.NewLine);
+         
 
 
             PercentDic.Add("HardCons", HardConsCheckPercent);
@@ -1426,8 +1417,7 @@ namespace ScheduleProspectorApp.MyClasses.XER
 
             var HighFloatActs = xerdcma.HighFloatCheck(TaskDataTable, CalendarDataTable, xerfunc).HighFloatActs;
 
-            //richTextBox6.AppendText(HighFloatCheckPercent + Environment.NewLine);
-            //richTextBox6.AppendText(HighFloatCheckbool.ToString() + Environment.NewLine);
+           
 
 
             PercentDic.Add("HighFloat", HighFloatCheckPercent);
@@ -1443,8 +1433,7 @@ namespace ScheduleProspectorApp.MyClasses.XER
 
             var NegativeFloatActs = xerdcma.NegativeFloatCheck(TaskDataTable, CalendarDataTable, xerfunc).NegativeFloatActs;
 
-            //richTextBox6.AppendText(NegativeFloatCheckPercent + Environment.NewLine);
-            //richTextBox6.AppendText(NegativeFloatCheckbool.ToString() + Environment.NewLine);
+           
 
             PercentDic.Add("NegativeFloat", NegativeFloatCheckPercent);
             IsPassedDic.Add("NegativeFloat", NegativeFloatCheckbool);
@@ -1456,8 +1445,7 @@ namespace ScheduleProspectorApp.MyClasses.XER
 
             var HighDurationActs = xerdcma.HighDurationCheck(TaskDataTable, CalendarDataTable, xerfunc).HighDurationActs;
 
-            //richTextBox6.AppendText(HighDurationCheckPercent + Environment.NewLine);
-            //richTextBox6.AppendText(HighDurationCheckbool.ToString() + Environment.NewLine);
+       
 
             PercentDic.Add("HighDur", HighDurationCheckPercent);
             IsPassedDic.Add("HighDur", HighDurationCheckbool);
@@ -1469,8 +1457,7 @@ namespace ScheduleProspectorApp.MyClasses.XER
 
             var InvalidDatesActs = xerdcma.InvalidDatesCheck(TaskDataTable, DataDate, xerfunc).InvalidDatesActs;
 
-            //richTextBox6.AppendText(InvalidDatesCheckPercent + Environment.NewLine);
-            //richTextBox6.AppendText(InvalidDatesCheckbool.ToString() + Environment.NewLine);
+        
 
 
             PercentDic.Add("InvaliDates", InvalidDatesCheckPercent);
@@ -1487,8 +1474,7 @@ namespace ScheduleProspectorApp.MyClasses.XER
 
             var MissedResourcesActs = xerdcma.MissedResourcesCheck(TaskDataTable).ActswithMissedResources;
 
-            //richTextBox6.AppendText(MissedResourcesCheckPercent + Environment.NewLine);
-            //richTextBox6.AppendText(MissedResourcesCheckbool.ToString() + Environment.NewLine);
+      
 
 
 
@@ -1503,8 +1489,7 @@ namespace ScheduleProspectorApp.MyClasses.XER
 
             var MissedActs = xerdcma.MissedTasksCheck(TaskDataTable, DataDate, xerfunc).MissedList;
 
-            //richTextBox6.AppendText(MissedTasksCheckPercent + Environment.NewLine);
-            //richTextBox6.AppendText(MissedTasksCheckbool.ToString() + Environment.NewLine);
+         
 
 
             PercentDic.Add("MissedTasks", MissedTasksCheckPercent);
@@ -1521,8 +1506,7 @@ namespace ScheduleProspectorApp.MyClasses.XER
 
             var ActsWithSuccorPrec = xerdcma.CPTCheck(TaskDataTable, TASKPREDDataTable).ActsWithoutList;
 
-            //richTextBox6.AppendText(CPTCheckPercent + Environment.NewLine);
-            //richTextBox6.AppendText(CPTCheckbool.ToString() + Environment.NewLine);
+           
 
             PercentDic.Add("CPT", CPTCheckPercent);
             IsPassedDic.Add("CPT", CPTCheckbool);
@@ -1534,8 +1518,7 @@ namespace ScheduleProspectorApp.MyClasses.XER
 
             var CPLICheckbool = xerdcma.CPLICheck(DataDate, TASKPREDDataTable, TaskDataTable, CalendarDataTable, xerfunc).IsPassed;
 
-            //richTextBox6.AppendText(CPLICheckPercent + Environment.NewLine);
-            //richTextBox6.AppendText(CPLICheckbool.ToString() + Environment.NewLine);
+        
 
 
             PercentDic.Add("CPLI", CPLICheckPercent);
@@ -1548,8 +1531,7 @@ namespace ScheduleProspectorApp.MyClasses.XER
 
             var BEIbool = xerdcma.BEICheck(TaskDataTable, xerfunc, DataDate).ispassed;
 
-            //richTextBox6.AppendText(BEIPercent + Environment.NewLine);
-            //richTextBox6.AppendText(BEIbool.ToString() + Environment.NewLine);
+          
 
 
             PercentDic.Add("BEI", BEIPercent);

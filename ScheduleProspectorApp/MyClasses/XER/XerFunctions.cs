@@ -348,7 +348,7 @@ namespace ScheduleProspectorApp.MyClasses.XER
 
 
 
-            // return Task.CompletedTask;
+          
 
         }
 
@@ -365,7 +365,7 @@ namespace ScheduleProspectorApp.MyClasses.XER
         public Rectangle MyRectangle(Graphics g, int p1, int p2, Brush mycolor, string CheckName
             , string CheckPercent, string CheckCondition)
         {
-            // g.DrawRectangle(new Pen(mycolor), p1, p2, 50, 50);
+           
 
             StringFormat format1 = new StringFormat(StringFormatFlags.NoClip);
 
@@ -462,7 +462,7 @@ namespace ScheduleProspectorApp.MyClasses.XER
             pieChart.Legend.Font.Bold = true;
             pieChart.Legend.Position = eLegendPosition.Right;
 
-            //  workbook.Worksheets.Add("newsheet2");
+          
 
 
 
@@ -632,7 +632,7 @@ namespace ScheduleProspectorApp.MyClasses.XER
 
             string datetimenow = DateTime.Now.ToString("yyyy-dd-M--HH-mm-ss");
 
-            //  string folderName = label4.Text;
+          
 
             string pathString = System.IO.Path.Combine(folderName, ProjectName + " Glance  " + datetimenow);
             System.IO.Directory.CreateDirectory(pathString);

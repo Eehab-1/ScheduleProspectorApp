@@ -9,7 +9,7 @@
   <Identity
     Name="23120IHAB.ScheduleProspector"
     Publisher="CN=946BA888-29D7-422A-BEF5-44FCD5DD4737"
-    Version="1.1.1.0" />
+    Version="1.1.2.0" />
 
   <Properties>
     <DisplayName>Schedule Prospector</DisplayName>

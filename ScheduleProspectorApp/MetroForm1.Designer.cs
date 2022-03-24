@@ -49,9 +49,9 @@ namespace ScheduleProspectorApp
             this.tabPageAdv5 = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPageAdv6 = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
+            this.label4 = new System.Windows.Forms.Label();
             this.sfButton4 = new Syncfusion.WinForms.Controls.SfButton();
             this.sfButton3 = new Syncfusion.WinForms.Controls.SfButton();
-            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tabControlAdv1)).BeginInit();
             this.tabControlAdv1.SuspendLayout();
             this.tabPageAdv1.SuspendLayout();
@@ -66,7 +66,7 @@ namespace ScheduleProspectorApp
             // tabControlAdv1
             // 
             this.tabControlAdv1.ActiveTabFont = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
-            this.tabControlAdv1.BeforeTouchSize = new System.Drawing.Size(788, 663);
+            this.tabControlAdv1.BeforeTouchSize = new System.Drawing.Size(800, 697);
             this.tabControlAdv1.Controls.Add(this.tabPageAdv1);
             this.tabControlAdv1.Controls.Add(this.tabPageAdv2);
             this.tabControlAdv1.Controls.Add(this.tabPageAdv4);
@@ -77,7 +77,7 @@ namespace ScheduleProspectorApp
             this.tabControlAdv1.FocusOnTabClick = false;
             this.tabControlAdv1.Location = new System.Drawing.Point(2, 2);
             this.tabControlAdv1.Name = "tabControlAdv1";
-            this.tabControlAdv1.Size = new System.Drawing.Size(788, 663);
+            this.tabControlAdv1.Size = new System.Drawing.Size(800, 697);
             this.tabControlAdv1.TabIndex = 0;
             this.tabControlAdv1.TabStop = false;
             this.tabControlAdv1.TabStyle = typeof(Syncfusion.Windows.Forms.Tools.OneNoteStyleRenderer);
@@ -102,7 +102,7 @@ namespace ScheduleProspectorApp
             this.tabPageAdv1.Location = new System.Drawing.Point(3, 42);
             this.tabPageAdv1.Name = "tabPageAdv1";
             this.tabPageAdv1.ShowCloseButton = true;
-            this.tabPageAdv1.Size = new System.Drawing.Size(781, 617);
+            this.tabPageAdv1.Size = new System.Drawing.Size(793, 651);
             this.tabPageAdv1.TabIndex = 1;
             this.tabPageAdv1.Text = "Files";
             this.tabPageAdv1.ThemesEnabled = false;
@@ -167,7 +167,7 @@ namespace ScheduleProspectorApp
             this.tabPageAdv2.Location = new System.Drawing.Point(3, 42);
             this.tabPageAdv2.Name = "tabPageAdv2";
             this.tabPageAdv2.ShowCloseButton = true;
-            this.tabPageAdv2.Size = new System.Drawing.Size(781, 617);
+            this.tabPageAdv2.Size = new System.Drawing.Size(787, 634);
             this.tabPageAdv2.TabIndex = 2;
             this.tabPageAdv2.Text = "Assessment";
             this.tabPageAdv2.ThemesEnabled = false;
@@ -232,7 +232,7 @@ namespace ScheduleProspectorApp
             this.tabPageAdv4.Location = new System.Drawing.Point(3, 42);
             this.tabPageAdv4.Name = "tabPageAdv4";
             this.tabPageAdv4.ShowCloseButton = true;
-            this.tabPageAdv4.Size = new System.Drawing.Size(781, 617);
+            this.tabPageAdv4.Size = new System.Drawing.Size(787, 634);
             this.tabPageAdv4.TabIndex = 4;
             this.tabPageAdv4.Text = "Extracting";
             this.tabPageAdv4.ThemesEnabled = false;
@@ -272,7 +272,7 @@ namespace ScheduleProspectorApp
             this.tabPageAdv3.Location = new System.Drawing.Point(3, 42);
             this.tabPageAdv3.Name = "tabPageAdv3";
             this.tabPageAdv3.ShowCloseButton = true;
-            this.tabPageAdv3.Size = new System.Drawing.Size(781, 617);
+            this.tabPageAdv3.Size = new System.Drawing.Size(787, 634);
             this.tabPageAdv3.TabIndex = 3;
             this.tabPageAdv3.Text = "Reporting";
             this.tabPageAdv3.ThemesEnabled = false;
@@ -296,7 +296,7 @@ namespace ScheduleProspectorApp
             this.tabPageAdv5.Location = new System.Drawing.Point(3, 42);
             this.tabPageAdv5.Name = "tabPageAdv5";
             this.tabPageAdv5.ShowCloseButton = true;
-            this.tabPageAdv5.Size = new System.Drawing.Size(781, 617);
+            this.tabPageAdv5.Size = new System.Drawing.Size(787, 634);
             this.tabPageAdv5.TabIndex = 5;
             this.tabPageAdv5.Text = "Delay Analysis";
             this.tabPageAdv5.ThemesEnabled = false;
@@ -322,10 +322,20 @@ namespace ScheduleProspectorApp
             this.tabPageAdv6.Location = new System.Drawing.Point(3, 42);
             this.tabPageAdv6.Name = "tabPageAdv6";
             this.tabPageAdv6.ShowCloseButton = true;
-            this.tabPageAdv6.Size = new System.Drawing.Size(781, 617);
+            this.tabPageAdv6.Size = new System.Drawing.Size(787, 634);
             this.tabPageAdv6.TabIndex = 6;
             this.tabPageAdv6.Text = "Help";
             this.tabPageAdv6.ThemesEnabled = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(19, 39);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(744, 20);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Please note this is a FREE tool and is still in the beta phase, and more features" +
+    " are coming.";
             // 
             // sfButton4
             // 
@@ -357,21 +367,11 @@ namespace ScheduleProspectorApp
             this.sfButton3.Text = "visit official website";
             this.sfButton3.Click += new System.EventHandler(this.sfButton3_Click);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(19, 39);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(744, 20);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Please note this is a FREE tool and is still in the beta phase, and more features" +
-    " are coming.";
-            // 
             // MetroForm1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(792, 667);
+            this.ClientSize = new System.Drawing.Size(804, 701);
             this.Controls.Add(this.tabControlAdv1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
