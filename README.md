@@ -11,7 +11,7 @@ Currently, Schedule Prospector supports only Primavera P6 schedules in XER file 
 
 # Tutorials Youtube Channel :
 
-(Coming Soon)
+https://youtu.be/E6u0JN6VE98
 
 
 # Download Links :
